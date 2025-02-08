@@ -7,10 +7,10 @@
 
     <link
       rel="icon"
-      href="./assets/images/kic-ksylogob.png"
-      sizes="512x512"
-      type="image/jpg"
+      href="https://kicksynp.github.io/assets/images/kic-ksylogob.png"
+      type="image/png"
     />
+
     <style>
       /* Root styles for dark mode and smooth aesthetics */
       * {
@@ -101,6 +101,14 @@
         h2 {
           font-size: 22px;
         }
+        .back-button {
+          width: 100%;
+          max-width: 250px;
+          padding: 12px;
+        }
+        .google-form-container iframe {
+          height: 70vh; /* Adjusting form height for smaller screens */
+        }
       }
     </style>
   </head>
@@ -108,8 +116,47 @@
     <div class="google-form-container">
       <h2>Kicksy Nepal</h2>
       <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSdB4oBLIwXvectbKIa8HTPnS5muuHnSvkHFR_5hxSE_2BwGhA/viewform?embedded=true"
+        id="google-form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdB4oBLIwXvectbKIa8HTPnS5muuHnSvkHFR_5hxSE_2BwGhA/viewform?embedded=true&hl=en"
       ></iframe>
+
+      <p
+        id="error-message"
+        style="
+          display: none;
+          color: white;
+          text-align: center;
+          margin-top: 20px;
+          font-size: 16px;
+        "
+      >
+        ⚠️ The form could not be loaded. Please try again later or
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdB4oBLIwXvectbKIa8HTPnS5muuHnSvkHFR_5hxSE_2BwGhA/viewform"
+          target="_blank"
+          style="color: #ff3c78; text-decoration: none; font-weight: bold"
+          >click here</a
+        >
+        to open it manually.
+      </p>
+
+      <script>
+        window.onload = function () {
+          const formIframe = document.getElementById("google-form");
+          const errorMessage = document.getElementById("error-message");
+
+          // Check if the form fails to load after 5 seconds
+          setTimeout(() => {
+            if (
+              !formIframe.contentWindow ||
+              formIframe.contentDocument.body.innerHTML.trim() === ""
+            ) {
+              formIframe.style.display = "none";
+              errorMessage.style.display = "block";
+            }
+          }, 5000); // 5-second timeout to check form loading
+        };
+      </script>
     </div>
 
     <!-- Back Button -->
