@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kicksy Feedback Form</title>
+
+    <link
+      rel="icon"
+      href="./assets/images/kic-ksylogob.png"
+      sizes="512x512"
+      type="image/jpg"
+    />
+    <style>
+      /* Root styles for dark mode and smooth aesthetics */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Background with a smooth gradient for a premium look */
+      body {
+        background: linear-gradient(135deg, #15202a, #1d2a35);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      /* Form container with soft edges and elegant shadows */
+      .google-form-container {
+        width: 100%;
+        max-width: 700px;
+        background: #f6f4e8;
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05),
+          0 10px 40px rgba(255, 255, 255, 0.08);
+        text-align: center;
+        animation: fadeIn 0.8s ease-in-out;
+      }
+
+      /* Smooth fade-in effect */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* Title styling for an elegant touch */
+      h2 {
+        color: #0d0d0d;
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        letter-spacing: 0.5px;
+      }
+
+      /* Styling the embedded form */
+      .google-form-container iframe {
+        width: 100%;
+        height: 600px;
+        border-radius: 10px;
+        border: none;
+      }
+
+      /* Back button styling */
+      .back-button {
+        margin-top: 20px;
+        background: transparent;
+        border: 2px solid #f6f4e8;
+        color: #f6f4e8;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+      }
+
+      .back-button:hover {
+        background: #ffbd4b;
+        color: #fff;
+        box-shadow: 0 0 15px #ffbd4b;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .google-form-container {
+          padding: 20px;
+        }
+        h2 {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="google-form-container">
+      <h2>Kicksy Nepal</h2>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdB4oBLIwXvectbKIa8HTPnS5muuHnSvkHFR_5hxSE_2BwGhA/viewform?embedded=true"
+      ></iframe>
+    </div>
+
+    <!-- Back Button -->
+    <button
+      class="back-button"
+      onclick="window.location.href='https://kicksynp.github.io/'"
+    >
+      Back to Kicksy
+    </button>
+  </body>
+</html>
